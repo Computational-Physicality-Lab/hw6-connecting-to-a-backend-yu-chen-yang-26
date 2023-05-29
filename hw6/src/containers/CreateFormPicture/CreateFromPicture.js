@@ -3,7 +3,6 @@ import { useState } from "react";
 import baseImage from "../../assets/images/shirt-base.png";
 import "./CreateFromPicture.css";
 import { createApi } from "unsplash-js";
-import tempData from "../../tempResults.json";
 import { useHook } from "../../shared/hooks";
 import db from "../../index.js";
 import { doc, setDoc } from "firebase/firestore";
