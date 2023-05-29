@@ -1,3 +1,17 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/v4VHUSr5)
 # hw6-connecting-to-a-backend
-This is the starter code of [2023-Programming User Interface Homework](https://hackmd.io/@akairisu/Sy8CUT3m3)
+- 姓名：楊于晨
+- 你 deploy 的網站連結
+    - https://thriving-panda-4f4356.netlify.app/
+    - 建議用google chrome開啟
+- HW4漏洞或問題
+    - 我在作業四中的shopping_cart: add, shopping_cart: preview有被扣分，但我並不清楚哪裡有問題，因此沒有做修正，若這次出現相同問題還請見諒
+- 你所實作的加分作業項目
+    - Display more
+        - 我預設會載入超過10張圖片，並在點擊display more後會額外顯示10張圖片，以滑鼠滾輪的方式顯示於原圖片的下方，唯載入圖片需要花上不少時間，請耐心等候
+    - Unsplash query
+        - 我增加color以及orientation的選項供使用者挑選，並預設為"black_and_white", "landscape"
+- 請討論你連結後端的方法及使用時遇到的困難或感到困惑的部分。
+    - 利用firebase可以大幅簡化建立server的困難，基本上只需要與資料庫做互動即可，整體來說只需要考慮資料的存放方法即可，我是使用兩個table，users以及cart，其中，users紀錄使用者帳號與訂單id陣列，cart則紀錄每筆訂單內容，包括id、數量、顏色、尺寸等。
+    - 當使用者登入時，會查詢該使用者是否存在於users，若無則新增條目，同時將該使用者的訂單筆數呈現於網頁購物車中。而當利用使用者新增一筆購物資料時，則於cart新增條目，並於使用者的訂單id陣列新增該訂單的id。而於購物車頁面時，會先爬取users中的訂單id陣列，再利用各個id去cart獲得資料。
+- 你實作的網站中與提出的作業規範不同之處
+    - 目前無特別不同之處，但是網頁操作上若於不同分頁登入同一帳號且將物品加入購物車，則另一個分頁必須在點擊購物車後才會刷新
