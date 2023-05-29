@@ -55,7 +55,7 @@ const ShoppingCart = () => {
             itemData = querySnapshot.data();
           });
         let tempList = [];
-        console.log(itemData.cartList);
+        setCartNumber(itemData.cartList.length);
         await itemData.cartList.map(async (item) => {
           await db
             .collection("cart")
@@ -72,7 +72,7 @@ const ShoppingCart = () => {
       }
     };
     fetchData();
-  }, [profile, setCart]);
+  }, [profile, setCart, setCartNumber]);
   useEffect(() => {
     var total = 0;
     var number = 0;

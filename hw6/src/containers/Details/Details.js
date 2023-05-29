@@ -135,18 +135,11 @@ const Details = () => {
               className="detail-size"
               onChange={(e) => setSize(e.target.value)}
             >
-              {sizeArray.map((i) => {
-                if (i === "Size:") {
-                  <option value="" key={i}>
-                    {i}
-                  </option>;
-                }
-                return (
-                  <option value={i} key={i}>
-                    {i}
-                  </option>
-                );
-              })}
+              {sizeArray.map((i) => (
+                <option value={i} key={i}>
+                  {i}
+                </option>
+              ))}
             </select>
           </div>
           <button

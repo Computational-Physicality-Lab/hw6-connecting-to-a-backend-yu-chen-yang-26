@@ -3,7 +3,7 @@ import { useState } from "react";
 import baseImage from "../../assets/images/shirt-base.png";
 import "./CreateFromPicture.css";
 import { createApi } from "unsplash-js";
-// import tempData from "../../tempResults.json";
+import tempData from "../../tempResults.json";
 import { useHook } from "../../shared/hooks";
 import db from "../../index.js";
 import { doc, setDoc } from "firebase/firestore";
@@ -17,6 +17,10 @@ const CreateFromPic = () => {
   const [size, setSize] = useState("Size");
   const [selectedImg, setSelectedImg] = useState("");
   const [query, setQuery] = useState(null);
+  const [orientation, setOrientation] = useState("landscape");
+  const [color, setColor] = useState("black_and_white");
+
+  const [number, setNumber] = useState(10);
   const numberArray = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
   ];
@@ -35,10 +39,23 @@ const CreateFromPic = () => {
     "Men's XL",
     "Men's 2XL",
   ];
+  const colorArray = [
+    "black_and_white",
+    "black",
+    "white",
+    "yellow",
+    "orange",
+    "red",
+    "purple",
+    "magenta",
+    "green",
+    "teal",
+    "blue",
+  ];
+  const orientationArray = ["landscape", "portrait", "squarish"];
   const clickAdd = async () => {
     const uuid = uuidv4();
     const time = new Date();
-    console.log("hi");
     await db
       .collection("users")
       .doc(profile.email)
@@ -65,7 +82,9 @@ const CreateFromPic = () => {
       .getPhotos({
         query: query,
         page: 1,
-        perPage: 10,
+        perPage: 30,
+        orientation: orientation,
+        color: color,
       })
       .then((result) => {
         console.log(result);
@@ -74,6 +93,7 @@ const CreateFromPic = () => {
           setData(result.response.results);
         }
       });
+    // console.log(tempData.results.length);
     // setData(tempData.results);
   };
   return (
@@ -117,25 +137,18 @@ const CreateFromPic = () => {
               className="create-size"
               onChange={(e) => setSize(e.target.value)}
             >
-              {sizeArray.map((i) => {
-                if (i === "Size:") {
-                  <option value="" key={i}>
-                    {i}
-                  </option>;
-                }
-                return (
-                  <option value={i} key={i}>
-                    {i}
-                  </option>
-                );
-              })}
+              {sizeArray.map((i) => (
+                <option value={i} key={i}>
+                  {i}
+                </option>
+              ))}
             </select>
           </div>
           <button
             className={
               (profile.length !== 0) & (size !== "Size") & (selectedImg !== "")
-                ? "add-button"
-                : "not-add-button"
+                ? "create-add-button"
+                : "create-not-add-button"
             }
             onClick={() => clickAdd()}
           >
@@ -150,6 +163,26 @@ const CreateFromPic = () => {
             placeholder="Search..."
             onChange={(e) => setQuery(e.target.value)}
           />
+          <select
+            className="search-color"
+            onChange={(e) => setColor(e.target.value)}
+          >
+            {colorArray.map((i) => (
+              <option value={i} key={i}>
+                {i}
+              </option>
+            ))}
+          </select>
+          <select
+            className="search-orientation"
+            onChange={(e) => setOrientation(e.target.value)}
+          >
+            {orientationArray.map((i) => (
+              <option value={i} key={i}>
+                {i}
+              </option>
+            ))}
+          </select>
           <button className="search-button" onClick={() => getData()}>
             Search
           </button>
@@ -157,17 +190,27 @@ const CreateFromPic = () => {
         {data.length === 0 ? (
           <h2>No Results</h2>
         ) : (
-          <div className="search-result">
-            {data.map((item) => (
-              <img
-                key={item.links.download}
-                className="search-result-item"
-                src={item.links.download}
-                width={300 * 0.42}
-                alt=""
-                onClick={() => setSelectedImg(item.links.download)}
-              />
-            ))}
+          <div className="search-content">
+            <div className="search-result">
+              {data.slice(0, number).map((item) => (
+                <img
+                  key={item.links.download}
+                  className="search-result-item"
+                  src={item.links.download}
+                  width={300 * 0.42}
+                  alt=""
+                  onClick={() => setSelectedImg(item.links.download)}
+                />
+              ))}
+            </div>
+            <button
+              className={
+                number === data.length ? "notdisplay-button" : "display-button"
+              }
+              onClick={() => setNumber(number + 10)}
+            >
+              Display more
+            </button>
           </div>
         )}
       </div>

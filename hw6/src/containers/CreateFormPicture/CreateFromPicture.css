@@ -27,14 +27,19 @@
         align-items: center;
     }
     .search-bar{
-        width: 400px;
+        width: 500px;
         height: 30px;
     }
     .search-input{
         padding: 3;
-        width: 334px;
+        width: 200px;
         height: 28px;
         border: 1px solid #c51230;
+    }
+    .search-color, .search-orientation{
+        height: 33px;
+        border: 1px solid #c51230;
+        border-left: none;
     }
     .search-button{
         cursor: pointer;
@@ -80,6 +85,28 @@
         justify-content: space-around;
         width: 58%; 
     }
+    .search-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: scroll;
+    }
+    .display-button, .notdisplay-button{
+        margin-top: 3vmin;
+        cursor: pointer;
+        padding: 3;
+        width: 100px;
+        height: 50px;
+        color: #c51230;
+        border: 2px solid #c51230;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .notdisplay-button{
+        pointer-events: none;
+        opacity: 40%;
+    }
 }
 @media(max-width:768px){
     .create-shirt{
@@ -113,12 +140,12 @@
 
 .create-quantity, .create-size{
     margin-left: 5px;
-    width: 30%;
+    width: 60%;
     height: 5vmin;
 }
-.add-button, .not-add-button{
+.create-add-button, .create-not-add-button{
     margin-top: 3vmin;
-    width: 50%;
+    width: 60%;
     background-color: #c51230;
     height: 5vmin;
     border: none;
@@ -126,10 +153,10 @@
     color: white;
     cursor: pointer;
 }
-.add-button:hover{
+.create-add-button:hover{
     background-color: #dc5d72;
 }
-.not-add-button{
+.create-not-add-button{
     opacity: 40%;
     pointer-events: none;
 }

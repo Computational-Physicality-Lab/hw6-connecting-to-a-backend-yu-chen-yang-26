@@ -92,7 +92,7 @@
     width: 20%;
     height: 5vmin;
 }
-.add-button{
+.add-button, .not-add-button{
     margin-top: 5vmin;
     width: 30%;
     background-color: #c51230;
