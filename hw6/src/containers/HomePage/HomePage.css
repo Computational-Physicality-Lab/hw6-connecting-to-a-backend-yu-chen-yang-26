@@ -1,0 +1,52 @@
+/* Your Code Here */
+  .home-pic{
+    width: 100%;
+  }
+  @media(max-width: 1600px){
+    .home-text{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-textbox{
+        margin: 1.5vmin;
+        padding: 0.5vmin;
+        width: 35%;
+        height: 20vmin;
+        border: 0.2vmin solid #c51230;
+        border-radius: 10px 10px 10px 10px;
+        text-align: left;
+    }
+    .home-textbox-header{
+        padding: 1vmin;
+        font-size: 3vmin;
+        color: #ce818e;
+    }
+    .home-textbox-content{
+        padding: 1vmin;
+        font-size: 2vmin;
+        color: grey;
+    }
+  }
+  
+  @media(max-width: 1300px){
+    .home-textbox{
+        height: 25vmin;
+    }
+  }
+  @media(max-width: 1000px){
+    .home-textbox{
+        height: 30vmin;
+    }
+  }
+  @media(max-width:768px){
+    .home-text{
+        flex-direction: column;
+    }
+    .home-textbox{
+        width: 90%;
+        max-height: 20vmin;
+        min-height: 100px;
+    }
+  }

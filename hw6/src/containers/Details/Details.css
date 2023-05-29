@@ -1,0 +1,112 @@
+.detail-body{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2vmin;
+}
+.detail-header{
+    width: 100%;
+    font-size: 7vmin;
+    padding: 3vmin;
+    text-align: left;
+}
+@media(max-width:1600px){
+    .detail-shirt{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .detail-shirt-pic{
+        width: 37%;
+    }
+    .detail-shirt-info{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 58%; 
+    }
+}
+@media(max-width:768px){
+    .detail-shirt{
+        flex-direction: column;
+    }
+    .detail-shirt-pic{
+        width: 100%;
+    }
+    .detail-shirt-info{
+        width: 100%; 
+    }
+}
+.detail-shirt{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.detail-shirt-price{
+    font-size: 4vmin;
+    color: #c51230;
+    text-align: left;
+}
+.detail-shirt-description{
+    margin-top: 3vmin;
+    font-size: 2.5vmin;
+    color: #c51230;
+    text-align: left;
+}
+.detail-shirt-info-item{
+    margin-top: 5vmin;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.detail-shirt-text{
+    font-size: 2.5vmin;
+    color: #9a9697;
+    text-align: left;
+}
+.detail-shirt-front-button, .detail-shirt-back-button, .detail-shirt-color-button{
+    border: 1px solid #c51230;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3vmin 3vmin 3vmin 3vmin;
+    font-size: 1vmin;
+    margin-left: 1vmin;
+    width: 10vmin;
+    height: 5vmin;
+    background-color: #c51230;
+    color: black;
+    cursor: pointer;
+}
+.detail-shirt-front-button:hover, .detail-shirt-back-button:hover, .detail-shirt-color-button:hover{
+    color: white;
+}
+.detail-quantity, .detail-size{
+    margin-left: 5px;
+    width: 20%;
+    height: 5vmin;
+}
+.add-button{
+    margin-top: 5vmin;
+    width: 30%;
+    background-color: #c51230;
+    height: 5vmin;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.add-button:hover{
+    background-color: #dc5d72;
+}
+.not-add-button{
+    opacity: 40%;
+    pointer-events: none;
+}
+

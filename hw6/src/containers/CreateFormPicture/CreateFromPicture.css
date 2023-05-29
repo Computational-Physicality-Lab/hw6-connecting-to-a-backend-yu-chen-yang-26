@@ -1,0 +1,136 @@
+.create-body{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2vmin;
+}
+@media(max-width:1600px){
+    .create-shirt{
+        margin-top: 5%;
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .search-pic{
+        margin-top: 5%;
+        width: 70%;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .search-bar{
+        width: 400px;
+        height: 30px;
+    }
+    .search-input{
+        padding: 3;
+        width: 334px;
+        height: 28px;
+        border: 1px solid #c51230;
+    }
+    .search-button{
+        cursor: pointer;
+        padding: 3;
+        width: 60px;
+        height: 33px;
+        background-color: #c51230;
+        color: white;
+        border: 2px solid #c51230;
+    }
+    .search-result{
+        margin-top: 3vmin;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1vmin;
+        overflow-y: scroll;
+    }
+    .search-result-item{
+        cursor: pointer;
+        max-height: 225px;
+    }
+    .create-shirt-pic{
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+        background-position: center bottom;
+        margin-bottom: 2vmin;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .create-selected-pic{
+        max-height: 225px;
+    }
+    .create-shirt-info{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 58%; 
+    }
+}
+@media(max-width:768px){
+    .create-shirt{
+        flex-direction: column;
+    }
+    .create-shirt-pic{
+        width: 100%;
+    }
+    .detcreateail-shirt-info{
+        width: 100%; 
+    }
+}
+.create-shirt-price{
+    font-size: 4vmin;
+    color: #c51230;
+    text-align: left;
+}
+
+.create-shirt-info-item{
+    margin-top: 3vmin;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.create-shirt-text{
+    font-size: 2.5vmin;
+    color: #9a9697;
+    text-align: left;
+}
+
+.create-quantity, .create-size{
+    margin-left: 5px;
+    width: 30%;
+    height: 5vmin;
+}
+.add-button, .not-add-button{
+    margin-top: 3vmin;
+    width: 50%;
+    background-color: #c51230;
+    height: 5vmin;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.add-button:hover{
+    background-color: #dc5d72;
+}
+.not-add-button{
+    opacity: 40%;
+    pointer-events: none;
+}
+

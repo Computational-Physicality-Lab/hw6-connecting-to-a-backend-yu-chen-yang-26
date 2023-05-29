@@ -1,0 +1,168 @@
+.header-bar{
+    width: 100%;
+    height: 2vmin;
+    background-color: #c51230;
+}
+.header-banner, .header-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header-menu{
+    padding: 0.5vmin;
+    border: 1px solid rgb(209, 207, 207);
+}
+.header-logo{
+    width: 15%;
+    cursor: pointer;
+}
+@media(max-width:1600px){
+    .header-name{
+        width: 60%;
+        text-align: right;
+        font-family: "Catamaran";
+        font-size: 5vmin;
+    }
+    .header-cart-pic{
+        height: 4.5vmin;
+    }
+}
+@media(max-width:768px){
+    .header-name{
+        font-size: 4vw;
+    }
+    .header-cart-pic{
+        height: 3.5vmin;
+    }
+}
+
+.header-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 8vmin;
+    cursor: pointer;
+    background-color: #ac2432;
+    color: white;
+    padding: 1vmin;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.header-cart-number{
+    font-size: 2.5vmin;
+}
+.header-menu-item{
+    width: 20%;
+    font-size: 2vmin;
+    border-top: 1vmin solid white;
+    border-bottom: 1vmin solid white;
+    font-family: "Catamaran";
+    color: #ce818e;
+    text-align: center;
+    cursor: pointer;
+}
+.header-menu-item:hover{
+    color: #c51230;
+    border-bottom: 1vmin solid #c51230;
+}
+
+#menu-toggle, .header-hamburger-button {
+    display: none;
+}
+@media(max-width:576px){
+    .menu-button-container{
+        display: flex;
+        width: 5%;
+    }
+    .header-hamburger-button{
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .header-hamburger-button-bar {
+        width: 100%;
+        margin: 0.3vmin;
+        height: 0.3vmin;
+        border: 3px;
+        background-color: #c51230;
+    }
+}
+.header-hamburger-menu {
+    display: none;
+}
+.header-hamburger-menu > li {
+    overflow: hidden;
+}
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 576px) {
+    .menu-button-container {
+        display: flex;
+    }
+    #menu-toggle:checked ~ .header-hamburger-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        list-style-type: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 45px;
+    }
+    #menu-toggle:checked ~ .header-hamburger-menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5vmin;
+    }
+    .header-hamburger-menu > li {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid #333;
+    }
+}
+@media(max-width:576px){
+    .header-cart, .header-menu-item{
+        display: none;
+    }
+    .header-menu{
+        border-bottom: none;
+    }
+}
+.header-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1vmin;
+}
+.header-profile-circle{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+.header-profile-picture{
+    width: 40px;
+    height: 40px;
+}

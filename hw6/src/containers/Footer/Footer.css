@@ -1,0 +1,25 @@
+.footer-banner{
+    margin-bottom: 3vmin;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 3vmin;
+    font-size: 2vmin;
+    background-color: #c51230;
+}
+.footer-banner-item{
+    cursor: pointer;
+    color: rgb(212, 209, 209);
+}
+.footer-banner-item:hover{
+    color: white;
+}
+.footer-banner-sign{
+    color: white;
+}
+@media(max-width:576px){
+    .footer-banner-item{
+        display: none;
+    }
+}

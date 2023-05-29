@@ -1,0 +1,16 @@
+.not_implemented-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+.not_implemented-pic{
+    width: 80vmin;
+    filter: opacity(50%);
+}
+.not_implemented-text{
+    font-size: 3vmin;
+    color: rgb(129, 128, 128);
+}
